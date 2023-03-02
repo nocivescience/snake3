@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        const STICK=10;
+        const state = {
+            snake: [{x: 0, y: 0}],
+            direction: {x: 1, y: 0},
+            snake: [{x: 0, y: 0}],
+            prey: randomXY(),
+            growing: 0,
+            runState: state_running,
+        }
+        function randomXY(){
+            return {
+                x: Math.floor(Math.random() * canvas.width),
+                y: Math.floor(Math.random() * canvas.height)
+            }
+        }
+        function tick(){
+            const head=state.snake[0]
+            const dx= state.direction.x
+            const dy= state.direction.y
+            const highestIndex=state.snake.length-1
+            let interval=STICK
+            const tail={}
+            Object.assign(tail, state.snake[highestIndex])
+        }
+    </script>
+</body>
+</html>
